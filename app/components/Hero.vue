@@ -21,7 +21,7 @@
           and keep the hair looking smooth. Let your hair be flexible and fresh.
         </p>
 
-        <ButtonPrimary>Shop Now</ButtonPrimary>
+        <ButtonPrimary class="shop-btn">Shop Now</ButtonPrimary>
 
         <div class="progress">
           <img src="/images/hero/progress.png" alt="Progress bar" />
@@ -37,6 +37,9 @@ section {
   background-color: #f2f0ff;
 }
 
+.shop-btn {
+  margin-bottom: 1.5rem;
+}
 .content-container {
   padding: 1rem;
 

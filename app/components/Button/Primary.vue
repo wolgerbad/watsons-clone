@@ -13,6 +13,5 @@ button {
   border: none;
   border-radius: 4px;
   font-weight: bold;
-  margin-bottom: 1.5rem;
 }
 </style>
