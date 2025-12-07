@@ -1,0 +1,90 @@
+<script setup>
+defineProps({
+  product: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
+<template>
+  <div class="product">
+    <div class="image-container">
+      <img
+        :src="product.thumbnail"
+        alt="Small product image"
+        class="product-image"
+      />
+    </div>
+    <div class="product-about">
+      <h4>{{ product.price }} TL</h4>
+      <p class="product-title">{{ product.title }}</p>
+    </div>
+
+    <div class="button-container">
+      <ButtonPrimary class="btn-featured">
+        <img
+          src="/images/featured/basket.svg"
+          alt="basket icon"
+          class="basket-icon"
+        />
+        <span>ADD</span>
+      </ButtonPrimary>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(236, 236, 236, 0.5);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.image-container {
+  padding: 1rem;
+  background-color: rgba(236, 236, 236, 0.16);
+}
+
+.product-about {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.button-container {
+  padding: 1rem 1rem 0 1rem;
+  font-weight: bold;
+  border-top: 1px solid rgba(236, 236, 236, 0.5);
+}
+
+.btn-featured {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.product-title {
+  color: #485363;
+}
+
+@media (min-width: 1024px) {
+  .button-container {
+    display: none;
+  }
+
+  .product-about {
+    padding: 2rem;
+  }
+}
+</style>
