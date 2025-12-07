@@ -7,6 +7,9 @@
       <img src="/images/hero/right.png" alt="" />
     </span>
     <div class="content-container">
+      <div class="content">
+        <img src="/images/hero/hero.png" alt="Hero image" />
+      </div>
       <div class="text">
         <div class="text-header">
           <h6>Naturals by watsons</h6>
@@ -20,12 +23,9 @@
 
         <button class="shop-btn">Shop Now</button>
 
-        <div>
+        <div class="progress">
           <img src="/images/hero/progress.png" alt="Progress bar" />
         </div>
-      </div>
-      <div class="content">
-        <img src="/images/hero/hero.png" alt="Hero image" />
       </div>
     </div>
   </section>
@@ -38,14 +38,19 @@ section {
 }
 
 .content-container {
-  padding-inline: 140px;
+  padding: 1rem;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.content img {
+  width: 100%;
 }
 
 .text {
-  padding-block: 88px;
+  padding-top: 1rem;
 }
 
 .text-header {
@@ -70,15 +75,17 @@ p {
 
 .shop-btn {
   background-color: #ff27ad;
+  width: 100%;
   padding: 0.5rem 1rem;
   color: white;
   border: none;
   border-radius: 4px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 1.5rem;
 }
 
 .left-icon {
+  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -88,11 +95,45 @@ p {
 }
 
 .right-icon {
+  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 28px;
   z-index: 10;
   cursor: pointer;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .content-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 140px;
+  }
+
+  .text {
+    order: 1;
+  }
+  .content {
+    order: 2;
+  }
+  .left-icon {
+    display: block;
+  }
+  .right-icon {
+    display: block;
+  }
+
+  .shop-btn {
+    width: fit-content;
+    margin-bottom: 2.5rem;
+  }
+  .progress {
+    display: block;
+  }
 }
 </style>
