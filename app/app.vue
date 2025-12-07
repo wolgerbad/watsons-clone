@@ -3,5 +3,7 @@
     <Hero />
     <Featured />
     <Newsletter />
+    <Banner />
+    <Categories />
   </NuxtLayout>
 </template>
