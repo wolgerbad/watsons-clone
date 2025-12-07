@@ -1,3 +1,5 @@
 <template>
-  <NuxtLayout> Content </NuxtLayout>
+  <NuxtLayout>
+    <Hero />
+  </NuxtLayout>
 </template>
