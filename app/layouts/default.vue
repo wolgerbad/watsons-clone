@@ -1,11 +1,16 @@
-<script setup></script>
+<script setup>
+const { isOpen } = useOpen();
+</script>
 
 <template>
-  <Header />
-  <main>
-    <slot />
-  </main>
-  <Footer />
+  <Hamburger v-if="isOpen" />
+  <div v-else>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <style></style>

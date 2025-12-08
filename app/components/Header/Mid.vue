@@ -1,3 +1,7 @@
+<script setup>
+const { toggleOpen } = useOpen();
+</script>
+
 <template>
   <nav>
     <div>
@@ -29,7 +33,7 @@
       <span>
         <img src="/images/topbar/basket.png" alt="Basket icon" />
       </span>
-      <span class="hamburger">
+      <span class="hamburger" @click="toggleOpen">
         <img src="/images/topbar/hamburger.png" alt="Hamburger menu icon" />
       </span>
     </div>

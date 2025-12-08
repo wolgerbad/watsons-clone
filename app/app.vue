@@ -1,3 +1,7 @@
+<script setup>
+const { isOpen } = useOpen();
+</script>
+
 <template>
   <NuxtLayout>
     <Hero />
