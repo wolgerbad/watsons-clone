@@ -1,24 +1,22 @@
 <script setup>
-defineProps({
+const props = defineProps({
   product: {
     type: Object,
     required: true,
   },
 });
+
+const { id, price, title, thumbnail } = props.product;
 </script>
 
 <template>
   <div class="product">
     <div class="image-container">
-      <img
-        :src="product.thumbnail"
-        alt="Small product image"
-        class="product-image"
-      />
+      <img :src="thumbnail" alt="Small product image" class="product-image" />
     </div>
     <div class="product-about">
-      <h4>{{ product.price }} TL</h4>
-      <p class="product-title">{{ product.title }}</p>
+      <h4>{{ price }} TL</h4>
+      <p class="product-title">{{ title }}</p>
     </div>
 
     <div class="button-container">
@@ -38,14 +36,14 @@ defineProps({
 .product {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(236, 236, 236, 0.5);
+  border: 1px solid rgba(var(--smoke), 0.5);
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .image-container {
   padding: 1rem;
-  background-color: rgba(236, 236, 236, 0.16);
+  background-color: rgba(var(--smoke), 0.16);
 }
 
 .product-about {
@@ -63,7 +61,7 @@ defineProps({
 .button-container {
   padding: 1rem 1rem 0 1rem;
   font-weight: bold;
-  border-top: 1px solid rgba(236, 236, 236, 0.5);
+  border-top: 1px solid rgba(var(--smoke), 0.5);
 }
 
 .btn-featured {

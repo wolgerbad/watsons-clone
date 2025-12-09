@@ -48,7 +48,7 @@ header {
 
 .spot-text {
   display: none;
-  color: #ececec;
+  color: rgb(var(--smoke));
   opacity: 0.5;
 }
 

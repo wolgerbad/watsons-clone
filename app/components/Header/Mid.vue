@@ -4,9 +4,9 @@ const { toggleOpen } = useOpen();
 
 <template>
   <nav>
-    <div>
+    <NuxtLink to="/">
       <img src="/images/topbar/logo.png" alt="Application logo" />
-    </div>
+    </NuxtLink>
     <div class="right">
       <div class="search-container">
         <span>
@@ -30,9 +30,9 @@ const { toggleOpen } = useOpen();
       <span class="search-icon">
         <img src="/images/topbar/search.png" alt="Search icon" />
       </span>
-      <span>
+      <NuxtLink to="/cart/checkout">
         <img src="/images/topbar/basket.png" alt="Basket icon" />
-      </span>
+      </NuxtLink>
       <span class="hamburger" @click="toggleOpen">
         <img src="/images/topbar/hamburger.png" alt="Hamburger menu icon" />
       </span>
@@ -62,7 +62,7 @@ nav {
   gap: 0.5rem;
   align-items: center;
   color: #8493a8;
-  background-color: rgba(236, 236, 236, 0.3);
+  background-color: rgba(var(--smoke), 0.3);
   border-radius: 10rem;
   padding: 9px;
 }

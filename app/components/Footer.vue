@@ -4,7 +4,9 @@
       <div class="footer-item">
         <div class="item-header">
           <span>CORPORATE</span>
-          <span class="icon">icon</span>
+          <span class="icon">
+            <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
+          </span>
         </div>
         <div class="item-content">
           <p>About us</p>
@@ -16,7 +18,9 @@
       <div class="footer-item">
         <div class="item-header">
           <span>SHOPPING</span>
-          <span class="icon">icon</span>
+          <span class="icon">
+            <img src="/images/footer/top-arrow.svg" alt="arrow bottom" />
+          </span>
         </div>
         <div class="item-content show">
           <p>Order and Payment</p>
@@ -28,7 +32,9 @@
       <div class="footer-item">
         <div class="item-header">
           <span>LEGAL</span>
-          <span class="icon">icon</span>
+          <span class="icon">
+            <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
+          </span>
         </div>
         <div class="item-content">
           <p>Terms of Use</p>
@@ -40,7 +46,9 @@
       <div class="footer-item">
         <div class="item-header">
           <span>HELP CENTER</span>
-          <span class="icon">icon</span>
+          <span class="icon">
+            <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
+          </span>
         </div>
         <div class="item-content">
           <p>FAQ</p>
@@ -50,12 +58,14 @@
       <div class="footer-item info">
         <div class="item-header">
           <span>CONTACT US</span>
-          <span class="icon">icon</span>
+          <span class="icon">
+            <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
+          </span>
         </div>
         <div class="item-content">
           <div>
             <span>
-              <img src="/images/footer/location.png" alt="" />
+              <img src="/images/footer/location.png" alt="location icon" />
             </span>
             <p>
               Saray Mah. Site Yolu Cad. Anel İş Merkezi, D:No:5/4, 34768
@@ -64,13 +74,13 @@
           </div>
           <div>
             <span>
-              <img src="/images/footer/phone.png" alt="" />
+              <img src="/images/footer/phone.png" alt="phone icon" />
             </span>
             <p>0850 755 9987</p>
           </div>
           <div>
             <span>
-              <img src="/images/footer/mail.png" alt="" />
+              <img src="/images/footer/mail.png" alt="mail icon" />
             </span>
             <p>info@watsons.com.tr</p>
           </div>
@@ -115,7 +125,7 @@ footer {
   flex-direction: column;
   gap: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid rgb(var(--smoke));
 }
 .item-content div {
   display: flex;
@@ -168,6 +178,10 @@ footer {
 
 .show {
   display: flex;
+}
+
+.icon {
+  line-height: 0;
 }
 
 @media (min-width: 1024px) {

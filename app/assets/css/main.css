@@ -1,5 +1,5 @@
 :root {
-  --primary: #4f46e5;
+  --smoke: 236, 236, 236;
   --secondary: #0099a8;
   --radius: 12px;
 }
@@ -7,5 +7,6 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: sans-serif;
 }

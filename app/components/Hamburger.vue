@@ -118,7 +118,7 @@ function handleActiveTab(val) {
 .hamburger-item {
   margin-inline: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--smoke);
 }
 
 .hamburger-top-item {
@@ -145,7 +145,7 @@ p {
   flex-direction: column;
   gap: 1rem;
   padding-block: 1rem;
-  background-color: rgba(236, 236, 236, 0.3);
+  background-color: rgba(var(--smoke), 0.3);
 }
 
 .hamburger-bot-item {
@@ -165,7 +165,7 @@ p {
 
 .active-tab {
   margin-inline: 1rem;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid rgb(var(--smoke));
   padding-block: 1rem;
   display: flex;
   flex-direction: column;
@@ -178,7 +178,7 @@ p {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
-  background-color: rgba(236, 236, 236, 0.3);
+  background-color: rgba(var(--smoke), 0.3);
   border-radius: 6px;
 }
 

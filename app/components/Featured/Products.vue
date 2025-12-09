@@ -1,7 +1,5 @@
 <script setup>
 const { data: products, status, error } = await useFetch('/api/products');
-
-console.log('products', products.value);
 </script>
 
 <template>

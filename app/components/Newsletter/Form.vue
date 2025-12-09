@@ -14,7 +14,7 @@ form {
 }
 
 input {
-  border: 1px solid #ececec;
+  border: 1px solid rgb(var(--smoke));
   border-radius: 4px;
   flex: 1;
   padding: 1rem;
