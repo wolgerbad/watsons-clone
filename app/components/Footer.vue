@@ -65,7 +65,7 @@
         <div class="item-content">
           <div>
             <span>
-              <img src="/images/footer/location.png" alt="location icon" />
+              <img src="/images/footer/location.svg" alt="location icon" />
             </span>
             <p>
               Saray Mah. Site Yolu Cad. Anel İş Merkezi, D:No:5/4, 34768
@@ -74,13 +74,13 @@
           </div>
           <div>
             <span>
-              <img src="/images/footer/phone.png" alt="phone icon" />
+              <img src="/images/footer/phone.svg" alt="phone icon" />
             </span>
             <p>0850 755 9987</p>
           </div>
           <div>
             <span>
-              <img src="/images/footer/mail.png" alt="mail icon" />
+              <img src="/images/footer/mail.svg" alt="mail icon" />
             </span>
             <p>info@watsons.com.tr</p>
           </div>
@@ -89,11 +89,11 @@
     </div>
     <div class="footer-bottom">
       <ul>
-        <li><img src="/images/footer/facebook.png" alt="facebook logo" /></li>
-        <li><img src="/images/footer/twitter.png" alt="twitter logo" /></li>
-        <li><img src="/images/footer/instagram.png" alt="instagram logo" /></li>
-        <li><img src="/images/footer/youtube.png" alt="youtube logo" /></li>
-        <li><img src="/images/footer/pinterest.png" alt="pinterest logo" /></li>
+        <li><img src="/images/footer/facebook.svg" alt="facebook logo" /></li>
+        <li><img src="/images/footer/twitter.svg" alt="twitter logo" /></li>
+        <li><img src="/images/footer/instagram.svg" alt="instagram logo" /></li>
+        <li><img src="/images/footer/youtube.svg" alt="youtube logo" /></li>
+        <li><img src="/images/footer/pinterest.svg" alt="pinterest logo" /></li>
       </ul>
       <div class="copyright copyright-mobile">
         <p>© Watsons 2021 all rights reserved</p>
@@ -111,6 +111,10 @@
 <style scoped>
 footer {
   padding: 1rem;
+}
+
+span {
+  line-height: 0;
 }
 
 .footer-top {
@@ -137,13 +141,19 @@ footer {
 }
 
 .item-header {
+  color: #2a2a48;
   display: flex;
+  align-items: center;
+  font-size: var(--text-xs);
+  font-weight: 500;
   justify-content: space-between;
 }
 .item-content {
   display: none;
+  font-size: var(--text-xs);
+  font-weight: 400;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   color: #485363;
   padding-bottom: 0.5rem;
 }
@@ -162,8 +172,9 @@ footer {
 }
 
 .copyright {
-  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
+
   font-weight: 500;
   color: #8493a8;
 }
@@ -211,6 +222,7 @@ footer {
   }
   .copyright-desktop {
     display: block;
+    padding-block: 0.5rem;
   }
 
   .footer-item {

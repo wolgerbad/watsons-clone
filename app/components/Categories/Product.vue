@@ -9,8 +9,7 @@ defineProps({
 
 <template>
   <div class="product">
-    <img :src="category.image" alt="" />
-
+    <img :src="category.image" :alt="`${category.title} background image`" />
     <div class="body">
       <h4>{{ category.title }}</h4>
       <p>{{ category.description }}</p>
@@ -23,6 +22,7 @@ defineProps({
 .product {
   position: relative;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .body {
@@ -38,15 +38,18 @@ defineProps({
   gap: 0.5rem;
   text-align: center;
   border-radius: 6px;
-  min-width: 200px;
-  width: fit-content;
 }
 h4 {
   color: #2a2a48;
-  font-weight: bold;
+  font-size: var(--text-xl);
+  font-weight: 700;
 }
+
 p {
+  font-size: var(--text-sm);
+  font-weight: 400;
   color: #485363;
+  line-height: 1.5rem;
 }
 button {
   text-transform: uppercase;
@@ -58,7 +61,8 @@ button {
   outline: 0;
   border: 0;
   color: white;
-  font-weight: bold;
+  font-size: var(--text-sm);
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -66,7 +70,9 @@ button:hover {
   background-color: #138a96;
 }
 img {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 </style>

@@ -21,7 +21,7 @@ section {
   }
   .newsletter-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 51.8% 48.2%;
     align-items: center;
     padding: 2.5rem;
   }

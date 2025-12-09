@@ -128,7 +128,7 @@ function handleActiveTab(val) {
 }
 
 .hamburger-bot-item p {
-  font-size: 14px;
+  font-size: var(--text-sm);
 }
 .last {
   border: 0;

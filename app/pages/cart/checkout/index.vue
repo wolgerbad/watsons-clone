@@ -243,7 +243,7 @@ const shipping = (10.5).toFixed(2);
 
 .form-main-area span {
   color: rgba(42, 42, 72, 0.6);
-  font-size: 12px;
+  font-size: var(--text-xs);
 }
 
 .required {

@@ -7,6 +7,7 @@ const props = defineProps({
 });
 
 const { id, price, title, thumbnail } = props.product;
+const formattedPrice = price.toFixed(2).replaceAll('.', ',');
 </script>
 
 <template>
@@ -15,7 +16,7 @@ const { id, price, title, thumbnail } = props.product;
       <img :src="thumbnail" alt="Small product image" class="product-image" />
     </div>
     <div class="product-about">
-      <h4>{{ price }} TL</h4>
+      <h4>{{ formattedPrice }} TL</h4>
       <p class="product-title">{{ title }}</p>
     </div>
 
@@ -53,13 +54,19 @@ const { id, price, title, thumbnail } = props.product;
   gap: 0.5rem;
 }
 
+.product-about h4 {
+  color: #2a2a48;
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
 .product-image {
   width: 100%;
   object-fit: cover;
 }
 
 .button-container {
-  padding: 1rem 1rem 0 1rem;
+  padding: 1rem;
   font-weight: bold;
   border-top: 1px solid rgba(var(--smoke), 0.5);
 }

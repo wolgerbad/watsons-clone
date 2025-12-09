@@ -5,13 +5,11 @@ const { toggleOpen } = useOpen();
 <template>
   <nav>
     <NuxtLink to="/">
-      <img src="/images/topbar/logo.png" alt="Application logo" />
+      <img src="/images/topbar/logo.svg" alt="Application logo" />
     </NuxtLink>
     <div class="right">
       <div class="search-container">
-        <span>
-          <img src="/images/topbar/inputsearch.png" alt="search icon" />
-        </span>
+        <img src="/images/topbar/input-search.svg" alt="search icon" />
         <input
           type="text"
           class="search-input"
@@ -24,17 +22,17 @@ const { toggleOpen } = useOpen();
           <span>Hello,</span>
           <h4>Clara Clara</h4>
         </span>
-        <img src="/images/topbar/avatar.png" class="avatar" alt="avatar" />
-        <img src="/images/topbar/show.png" />
+        <img src="/images/topbar/avatar.svg" class="avatar" alt="avatar" />
+        <img src="/images/topbar/show.svg" />
       </div>
       <span class="search-icon">
-        <img src="/images/topbar/search.png" alt="Search icon" />
+        <img src="/images/topbar/mobile-search.svg" alt="Search icon" />
       </span>
       <NuxtLink to="/cart/checkout">
-        <img src="/images/topbar/basket.png" alt="Basket icon" />
+        <img src="/images/topbar/basket.svg" class="basket" alt="Basket icon" />
       </NuxtLink>
       <span class="hamburger" @click="toggleOpen">
-        <img src="/images/topbar/hamburger.png" alt="Hamburger menu icon" />
+        <img src="/images/topbar/hamburger.svg" alt="Hamburger menu icon" />
       </span>
     </div>
   </nav>
@@ -47,7 +45,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding-block: 1rem;
+  font-weight: 400;
 }
 
 .right {
@@ -84,10 +82,24 @@ nav {
   display: flex;
   align-items: center;
   gap: 2px;
+  font-size: var(--text-sm);
 }
 
 .user-name span {
   color: #8493a8;
+}
+
+.user-name h4 {
+  color: #2a2a48;
+  font-weight: 500;
+}
+
+a {
+  line-height: 0;
+}
+
+span {
+  line-height: 0;
 }
 
 @media (min-width: 1200px) {

@@ -16,6 +16,8 @@ form {
 input {
   border: 1px solid rgb(var(--smoke));
   border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 400;
   flex: 1;
   padding: 1rem;
   color: rgba(42, 42, 72, 0.6);

@@ -12,6 +12,6 @@ button {
   color: white;
   border: none;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 700;
 }
 </style>

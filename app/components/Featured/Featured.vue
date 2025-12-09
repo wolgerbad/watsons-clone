@@ -12,7 +12,7 @@ section {
 
 @media (min-width: 1024px) {
   section {
-    padding: 40px 140px;
+    padding: 2.5rem 140px;
   }
 }
 </style>

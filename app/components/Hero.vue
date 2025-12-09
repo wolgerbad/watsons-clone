@@ -1,10 +1,10 @@
 <template>
   <section>
     <span class="left-icon">
-      <img src="/images/hero/left.png" alt="" />
+      <img src="/images/hero/left.svg" alt="" />
     </span>
     <span class="right-icon">
-      <img src="/images/hero/right.png" alt="" />
+      <img src="/images/hero/right.svg" alt="" />
     </span>
     <div class="content-container">
       <div class="content">
@@ -24,7 +24,7 @@
         <ButtonPrimary class="shop-btn">Shop Now</ButtonPrimary>
 
         <div class="progress">
-          <img src="/images/hero/progress.png" alt="Progress bar" />
+          <img src="/images/hero/progress.svg" alt="Progress bar" />
         </div>
       </div>
     </div>
@@ -63,17 +63,22 @@ section {
 .text-description {
   margin-bottom: 1rem;
 }
-h6 {
+.text-header h6 {
   text-transform: uppercase;
-  font-weight: bold;
   color: #8493a8;
+  font-size: var(--text-sm);
+  font-weight: 700;
 }
-h2 {
+.text-header h2 {
+  font-family: var(--font-rubik);
   color: #2a2a48;
-  font-weight: bold;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 3rem;
 }
 p {
   color: #485363;
+  font-weight: 400;
 }
 
 .left-icon {

@@ -1,15 +1,15 @@
 <template>
   <header>
     <div class="top-items">
-      <div class="top-item">
+      <div class="top-item left">
         <span>
-          <img src="/images/topbar/store.png" alt="Store icon" />
+          <img src="/images/topbar/store.svg" alt="Store icon" />
         </span>
         <span>Stores</span>
       </div>
-      <div class="top-item">
+      <div class="top-item left">
         <span>
-          <img src="/images/topbar/catalog.png" alt="Catalog icon" />
+          <img src="/images/topbar/catalog.svg" alt="Catalog icon" />
         </span>
         <span>Catalog</span>
       </div>
@@ -17,15 +17,17 @@
     <div class="spot-text">
       <h4>Watsons Beauty and Personal Care Awards Nominees!</h4>
     </div>
-    <span>
-      <img src="/images/topbar/phone.png" alt="Phone icon" />
-    </span>
+    <div class="top-item">
+      <p class="call-paragraph">Call us:(+90) 850 123 45 67</p>
+      <img src="/images/topbar/phone.svg" alt="Phone icon" />
+    </div>
   </header>
 </template>
 
 <style scoped>
 header {
   color: white;
+  font-weight: 500;
   background-color: #505357;
   display: flex;
   gap: 0.5rem;
@@ -44,12 +46,21 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.left {
+  padding-inline: 1rem;
 }
 
 .spot-text {
   display: none;
-  color: rgb(var(--smoke));
-  opacity: 0.5;
+  color: rgba(var(--smoke), 0.5);
+}
+
+.spot-text h4 {
+  font-size: var(--text-sm);
+  font-weight: 400;
 }
 
 span {
@@ -57,9 +68,17 @@ span {
   align-items: center;
 }
 
+.call-paragraph {
+  display: none;
+}
+
 @media (min-width: 1200px) {
   .spot-text {
     display: block;
+  }
+
+  .call-paragraph {
+    display: inline-block;
   }
 
   header {

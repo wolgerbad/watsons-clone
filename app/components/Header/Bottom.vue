@@ -13,12 +13,12 @@
 
 <style scoped>
 ul {
+  font-weight: 700;
   display: none;
   color: #2a2a48;
-  font-weight: bold;
-  font-size: 14px;
+  font-size: var(--text-sm);
   padding-inline: 140px;
-  gap: 2rem;
+  justify-content: space-between;
   text-transform: uppercase;
 }
 
