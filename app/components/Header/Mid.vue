@@ -1,5 +1,6 @@
 <script setup>
 const { toggleOpen } = useOpen();
+const { cartLength } = useCart();
 </script>
 
 <template>
@@ -30,6 +31,7 @@ const { toggleOpen } = useOpen();
       </span>
       <NuxtLink to="/cart/checkout" class="basket-link">
         <img src="/images/topbar/basket.svg" class="basket" alt="Basket icon" />
+        <span v-if="cartLength" class="basket-count">{{ cartLength }}</span>
       </NuxtLink>
       <span class="hamburger" @click="toggleOpen">
         <img src="/images/topbar/hamburger.svg" alt="Hamburger menu icon" />
@@ -81,14 +83,28 @@ nav {
   font-weight: 500;
 }
 
-span {
-  line-height: 0;
-}
-
 .avatar {
   width: 36px;
   height: 36px;
   object-fit: cover;
+}
+
+.basket-link {
+  position: relative;
+}
+
+.basket-count {
+  color: white;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1rem;
+  background-color: #fa4c44;
+  padding-inline: 4px;
+  position: absolute;
+  right: -4px;
+  top: -12px;
+  border-radius: 40px;
+  border: 2px solid white;
 }
 
 @media (min-width: 1200px) {

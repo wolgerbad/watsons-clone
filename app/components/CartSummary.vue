@@ -1,71 +1,79 @@
 <script setup>
-const { data: products, error, status } = await useFetch('/api/products');
+const { cart, addToCart, removeCart } = useCart();
 
-const filteredProducts = products.value.slice(0, 2);
-
-const subTotal = filteredProducts
-  .reduce((acc, cur) => acc + cur.price, 0)
+const subTotal = cart?.value
+  .reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
   .toFixed(2);
 const shipping = (10.5).toFixed(2);
+
+function handleAdd(product) {
+  addToCart(product);
+}
+
+function handleRemove(id) {
+  removeCart(id);
+}
 </script>
 
 <template>
   <div class="cart-summary">
     <h4>Shopping cart summary</h4>
-    <div class="cart-container">
-      <div
-        v-for="product in filteredProducts"
-        :key="product.id"
-        class="cart-item"
-      >
-        <span class="product-image-container">
-          <img
-            :src="product.thumbnail"
-            alt="small product thumbnail photo"
-            class="thumbnail"
-          />
-        </span>
-        <div class="cart-content">
-          <h3 class="product-title">{{ product.title }}</h3>
-          <div class="cart-bottom">
-            <p class="product-price">
-              {{ product.price.toFixed(2).replaceAll('.', ',') }} TL
-            </p>
-            <div class="quantity">
-              <button class="btn-icon">
-                <img src="/images/checkout/plus.svg" alt="plus icon" />
-              </button>
-              <span>1</span>
-              <button class="btn-icon">
-                <img src="/images/checkout/minus.svg" alt="plus icon" />
-              </button>
+    <div v-if="cart.length">
+      <div class="cart-container">
+        <div v-for="product in cart" :key="product.id" class="cart-item">
+          <span class="product-image-container">
+            <img
+              :src="product.thumbnail"
+              alt="small product thumbnail photo"
+              class="thumbnail"
+            />
+          </span>
+          <div class="cart-content">
+            <h3 class="product-title">{{ product.title }}</h3>
+            <div class="cart-bottom">
+              <p class="product-price">
+                {{ product.price.toFixed(2).replaceAll('.', ',') }} TL
+              </p>
+              <div class="quantity">
+                <button class="btn-icon" @click="handleAdd(product)">
+                  <img src="/images/checkout/plus.svg" alt="plus icon" />
+                </button>
+                <span>{{ product.quantity }}</span>
+                <button class="btn-icon" @click="handleRemove(product.id)">
+                  <img src="/images/checkout/minus.svg" alt="minus icon" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div>
-        <input type="text" placeholder="Discount code" />
+        <div>
+          <input type="text" placeholder="Discount code" />
+        </div>
+        <div class="total">
+          <div class="total-item">
+            <span>Subtotal</span>
+            <span class="price">{{ subTotal.replaceAll('.', ',') }} TL</span>
+          </div>
+          <div class="total-item item-shipping">
+            <span>Shipping</span>
+            <span class="price">{{ shipping.replaceAll('.', ',') }} TL</span>
+          </div>
+          <div class="total-item item-bottom">
+            <span>Total</span>
+            <span
+              >{{
+                (+subTotal + +shipping).toFixed(2).replaceAll('.', ',')
+              }}
+              TL</span
+            >
+          </div>
+        </div>
       </div>
-      <div class="total">
-        <div class="total-item">
-          <span>Subtotal</span>
-          <span class="price">{{ subTotal.replaceAll('.', ',') }} TL</span>
-        </div>
-        <div class="total-item item-shipping">
-          <span>Shipping</span>
-          <span class="price">{{ shipping.replaceAll('.', ',') }} TL</span>
-        </div>
-        <div class="total-item item-bottom">
-          <span>Total</span>
-          <span
-            >{{
-              (+subTotal + +shipping).toFixed(2).replaceAll('.', ',')
-            }}
-            TL</span
-          >
-        </div>
-      </div>
+    </div>
+    <div v-else>
+      <span> There are no item found in the cart. </span>
+      <NuxtLink to="/"> Go checkout our products </NuxtLink>
     </div>
   </div>
 </template>
@@ -115,6 +123,7 @@ const shipping = (10.5).toFixed(2);
 
 .btn-icon {
   color: #485363;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

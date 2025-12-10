@@ -89,5 +89,8 @@ textarea {
 }
 
 @media (min-width: 1024px) {
+  .address {
+    grid-column: 1 / -1;
+  }
 }
 </style>

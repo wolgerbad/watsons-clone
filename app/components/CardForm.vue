@@ -89,10 +89,6 @@ textarea {
   margin-inline: 1rem;
 }
 
-.address {
-  grid-column: 1 / -1;
-}
-
 @media (min-width: 1024px) {
   .form-image {
     order: 2;

@@ -8,6 +8,13 @@ const props = defineProps({
 
 const { id, price, title, thumbnail } = props.product;
 const formattedPrice = price.toFixed(2).replaceAll('.', ',');
+
+const { cart, addToCart } = useCart();
+
+function handleAdd(product) {
+  addToCart(product);
+  console.log('cart', cart.value);
+}
 </script>
 
 <template>
@@ -15,21 +22,24 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
     <div class="image-container">
       <img :src="thumbnail" alt="Small product image" class="product-image" />
       <span class="product-hover">
-        <span class="hover-item">
+        <button class="hover-item">
           <span class="hover-icon">
             <img src="/images/featured/view.svg" alt="view icon" />
           </span>
           <span class="hover-text">Quick view</span>
-        </span>
+        </button>
 
         <img src="/images/featured/divider.svg" alt="divider icon" />
 
-        <span class="hover-item">
+        <button
+          class="hover-item"
+          @click="handleAdd({ id, price, title, thumbnail })"
+        >
           <span class="hover-icon">
             <img src="/images/featured/basket.svg" alt="basket icon" />
           </span>
           <span class="hover-text"> Add </span>
-        </span>
+        </button>
       </span>
     </div>
     <div class="product-about">
@@ -38,7 +48,10 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
     </div>
 
     <div class="button-container">
-      <ButtonPrimary class="btn-featured">
+      <ButtonPrimary
+        class="btn-featured"
+        @click="handleAdd({ id, price, title, thumbnail })"
+      >
         <img
           src="/images/featured/basket.svg"
           alt="basket icon"
@@ -106,6 +119,18 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
   color: #485363;
 }
 
+.hover-text {
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  background-color: transparent;
+  border: 0;
+}
+
+.product-hover {
+  opacity: 0;
+}
+
 @media (min-width: 1024px) {
   .button-container {
     display: none;
@@ -117,13 +142,9 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
 
   .product-hover {
     display: flex;
-    opacity: 0;
     transition: all 60ms ease-in-out;
     position: absolute;
     line-height: 0;
-    color: white;
-    font-size: var(--text-sm);
-    font-weight: 500;
     background-color: rgba(0, 0, 0, 0.8);
     bottom: 0;
     left: 0;
@@ -138,6 +159,8 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
   }
 
   .hover-item {
+    border: 0;
+    background-color: transparent;
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -151,7 +174,7 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
   }
 
   .hover-icon,
-  .hover-text {
+  .hover-item {
     line-height: 1;
   }
 
@@ -167,7 +190,7 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
     line-height: 0;
   }
 
-  .hover-text {
+  .hover-item {
     line-height: 24px;
   }
 }
