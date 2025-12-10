@@ -6,7 +6,7 @@
 
 <style scoped>
 button {
-  background-color: #ff27ad;
+  background-color: var(--primary);
   width: 100%;
   padding: 0.5rem 1rem;
   color: white;

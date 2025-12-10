@@ -3,22 +3,22 @@ const categories = [
   {
     title: 'Personal Care',
     description: 'Lorem ipsum dolor sit amet consectetu elit aliquam',
-    image: '/images/categories/personal.png',
+    image: '/images/categories/personal.jpg',
   },
   {
     title: 'Skin Care',
     description: 'Lorem ipsum dolor sit amet consectetu elit aliquam',
-    image: '/images/categories/skin.png',
+    image: '/images/categories/skin.jpg',
   },
   {
     title: 'Make - Up',
     description: 'Lorem ipsum dolor sit amet consectetu elit aliquam',
-    image: '/images/categories/makeup.png',
+    image: '/images/categories/makeup.jpg',
   },
   {
     title: 'Mother & Baby',
     description: 'Lorem ipsum dolor sit amet consectetu elit aliquam',
-    image: '/images/categories/motherbaby.png',
+    image: '/images/categories/motherbaby.jpg',
   },
 ];
 </script>

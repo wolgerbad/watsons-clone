@@ -51,6 +51,17 @@ header {
 }
 .left {
   padding-inline: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 60ms ease-in-out;
+}
+
+.left span {
+  line-height: 1.5rem;
+}
+
+.left:hover {
+  background-color: #ffffff33;
 }
 
 .spot-text {

@@ -14,6 +14,23 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
   <div class="product">
     <div class="image-container">
       <img :src="thumbnail" alt="Small product image" class="product-image" />
+      <span class="product-hover">
+        <span class="hover-item">
+          <span class="hover-icon">
+            <img src="/images/featured/view.svg" alt="view icon" />
+          </span>
+          <span class="hover-text">Quick view</span>
+        </span>
+
+        <img src="/images/featured/divider.svg" alt="divider icon" />
+
+        <span class="hover-item">
+          <span class="hover-icon">
+            <img src="/images/featured/basket.svg" alt="basket icon" />
+          </span>
+          <span class="hover-text"> Add </span>
+        </span>
+      </span>
     </div>
     <div class="product-about">
       <h4>{{ formattedPrice }} TL</h4>
@@ -39,12 +56,18 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
   flex-direction: column;
   border: 1px solid rgba(var(--smoke), 0.5);
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 8px 0px rgba(0, 0, 0, 0.039);
+  transition: all 100ms ease-in-out;
+}
+
+.product:hover {
+  box-shadow: 0 24px 24px 0px rgba(0, 0, 0, 0.039);
 }
 
 .image-container {
   padding: 1rem;
   background-color: rgba(var(--smoke), 0.16);
+  position: relative;
 }
 
 .product-about {
@@ -90,6 +113,62 @@ const formattedPrice = price.toFixed(2).replaceAll('.', ',');
 
   .product-about {
     padding: 2rem;
+  }
+
+  .product-hover {
+    display: flex;
+    opacity: 0;
+    transition: all 60ms ease-in-out;
+    position: absolute;
+    line-height: 0;
+    color: white;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .product:hover .product-hover {
+    opacity: 1;
+  }
+
+  .hover-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding-inline: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .hover-item:hover {
+    background-color: #ffffff33;
+  }
+
+  .hover-icon,
+  .hover-text {
+    line-height: 1;
+  }
+
+  .hover-icon img {
+    display: block;
+  }
+
+  .product-hover {
+    padding-block: 0.5rem;
+  }
+
+  .hover-icon {
+    line-height: 0;
+  }
+
+  .hover-text {
+    line-height: 24px;
   }
 }
 </style>

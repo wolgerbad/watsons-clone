@@ -22,13 +22,13 @@ const { toggleOpen } = useOpen();
           <span>Hello,</span>
           <h4>Clara Clara</h4>
         </span>
-        <img src="/images/topbar/avatar.svg" class="avatar" alt="avatar" />
+        <img src="/images/topbar/avatar.png" class="avatar" alt="avatar" />
         <img src="/images/topbar/show.svg" />
       </div>
       <span class="search-icon">
         <img src="/images/topbar/mobile-search.svg" alt="Search icon" />
       </span>
-      <NuxtLink to="/cart/checkout">
+      <NuxtLink to="/cart/checkout" class="basket-link">
         <img src="/images/topbar/basket.svg" class="basket" alt="Basket icon" />
       </NuxtLink>
       <span class="hamburger" @click="toggleOpen">
@@ -40,9 +40,9 @@ const { toggleOpen } = useOpen();
 
 <style scoped>
 nav {
-  padding-inline: 1rem;
+  padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
   gap: 1rem;
   font-weight: 400;
@@ -50,32 +50,19 @@ nav {
 
 .right {
   display: flex;
+  height: 100%;
   align-items: center;
+  flex: 1;
+  justify-content: end;
   gap: 2rem;
 }
 
 .search-container {
-  width: 560px;
   display: none;
-  gap: 0.5rem;
-  align-items: center;
-  color: #8493a8;
-  background-color: rgba(var(--smoke), 0.3);
-  border-radius: 10rem;
-  padding: 9px;
-}
-
-.search-input {
-  width: 100%;
-  border: none;
-  outline: none;
-  background-color: transparent;
 }
 
 .user {
   display: none;
-  align-items: center;
-  gap: 1rem;
 }
 
 .user-name {
@@ -94,17 +81,20 @@ nav {
   font-weight: 500;
 }
 
-a {
-  line-height: 0;
-}
-
 span {
   line-height: 0;
 }
 
+.avatar {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}
+
 @media (min-width: 1200px) {
   nav {
-    padding-inline: 140px;
+    height: 72px;
+    padding: 0 140px;
   }
   .search-icon {
     display: none;
@@ -115,10 +105,26 @@ span {
 
   .user {
     display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .search-container {
     display: flex;
+    width: 560px;
+    background-color: rgba(var(--smoke), 0.3);
+    gap: 0.5rem;
+    align-items: center;
+    color: #8493a8;
+    border-radius: 10rem;
+    padding: 9px;
+  }
+
+  .search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
   }
 }
 </style>

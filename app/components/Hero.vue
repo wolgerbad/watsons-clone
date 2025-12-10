@@ -39,6 +39,11 @@ section {
 
 .shop-btn {
   margin-bottom: 1.5rem;
+  transition: all 60ms ease-in-out;
+}
+
+.shop-btn:hover {
+  background-color: var(--dark-primary);
 }
 .content-container {
   padding: 1rem;
@@ -83,22 +88,10 @@ p {
 
 .left-icon {
   display: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 44px;
-  z-index: 10;
-  cursor: pointer;
 }
 
 .right-icon {
   display: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 28px;
-  z-index: 10;
-  cursor: pointer;
 }
 
 .progress {
@@ -120,9 +113,27 @@ p {
   }
   .left-icon {
     display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 44px;
+    z-index: 10;
+    cursor: pointer;
   }
   .right-icon {
     display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 28px;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 60ms ease-in-out;
+  }
+
+  .right-icon:hover {
+    background-color: rgb(var(--smoke));
+    border-radius: 200px;
   }
 
   .shop-btn {

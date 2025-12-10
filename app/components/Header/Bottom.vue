@@ -23,8 +23,16 @@ ul {
 }
 
 li {
+  cursor: pointer;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   list-style: none;
   padding: 1rem;
+  transition: all 60ms ease-in-out;
+}
+
+li:hover {
+  background-color: rgba(var(--smoke), 0.3);
 }
 
 @media (min-width: 1200px) {

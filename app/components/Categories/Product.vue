@@ -9,11 +9,13 @@ defineProps({
 
 <template>
   <div class="product">
-    <img :src="category.image" :alt="`${category.title} background image`" />
-    <div class="body">
-      <h4>{{ category.title }}</h4>
-      <p>{{ category.description }}</p>
-      <button>Browse</button>
+    <img :src="category.image" alt="product image" />
+    <div class="wrapper">
+      <div class="body">
+        <h4>{{ category.title }}</h4>
+        <p>{{ category.description }}</p>
+        <button>Browse</button>
+      </div>
     </div>
   </div>
 </template>
@@ -21,23 +23,48 @@ defineProps({
 <style scoped>
 .product {
   position: relative;
+  border: 1px solid rgba(var(--smoke), 0.5);
   border-radius: 6px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.039);
+
+  transition: all 100ms ease-in-out;
+}
+
+.product:hover {
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.039),
+    0px 24px 24px rgba(0, 0, 0, 0.059), 0px -6px 30px rgba(0, 0, 0, 0.059);
+}
+
+.product:hover .body {
+  background-color: white;
+}
+
+img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  z-index: -10;
+}
+
+.wrapper {
+  padding: 4rem;
 }
 
 .body {
-  position: absolute;
-  z-index: 50;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   gap: 0.5rem;
   text-align: center;
   border-radius: 6px;
+  transition: all 100ms ease-in-out;
 }
 h4 {
   color: #2a2a48;
@@ -68,11 +95,5 @@ button {
 
 button:hover {
   background-color: #138a96;
-}
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 </style>
