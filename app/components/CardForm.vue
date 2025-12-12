@@ -3,7 +3,7 @@
     <header class="form-header">
       <img src="/images/checkout/payment.svg" alt="payment icon" />
 
-      <span>Payment-details</span>
+      <h4>Payment details</h4>
     </header>
 
     <div class="form-main">
@@ -52,6 +52,7 @@
 <style scoped>
 .required {
   color: #8493a8;
+  line-height: 1.5rem;
 }
 
 .cvv-input {
@@ -67,8 +68,15 @@
 }
 
 .btn-pay {
+  text-transform: uppercase;
+  background-color: var(--primary);
+  opacity: 0.3;
+  font-size: var(--text-sm);
+  line-height: 1rem;
   padding: 0.5rem 1rem;
+  height: 2rem;
   border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
 input,
@@ -85,13 +93,17 @@ textarea {
   outline: none;
 }
 
-.form-image {
-  margin-inline: 1rem;
-}
-
 @media (min-width: 1024px) {
   .form-image {
+    margin: 0;
     order: 2;
+  }
+
+  .required {
+    margin-bottom: 1rem;
+  }
+  .btn-pay {
+    margin-bottom: 0;
   }
 }
 </style>

@@ -1,12 +1,14 @@
 <template>
   <Breadcrumb />
-  <div class="container">
-    <div class="cart">
-      <CartSummary />
-    </div>
-    <div class="forms">
-      <ShippingForm />
-      <CardForm />
+  <div class="app-container">
+    <div class="container">
+      <div class="cart">
+        <CartSummary />
+      </div>
+      <div class="forms">
+        <ShippingForm />
+        <CardForm />
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +18,10 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.app-container {
+  border-bottom: 1px solid rgb(var(--smoke));
 }
 
 .form-main {
@@ -55,8 +61,6 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgb(var(--smoke));
 }
 
 .form-header {
@@ -73,22 +77,19 @@
   font-weight: 500;
 }
 
-.form-label {
-  margin-bottom: 0.5rem;
-}
-
 @media (min-width: 1024px) {
   .container {
     display: grid;
     margin-inline: 140px;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 2.5rem;
-    padding-block: 2rem;
   }
 
   .cart {
     grid-column: 2 / 3;
     order: 2;
+    margin-bottom: 2rem;
+    padding-block: 2rem;
   }
 
   .forms {
@@ -97,19 +98,24 @@
     gap: 2rem;
     grid-column: 1 / 2;
     order: 1;
+    padding-block: 2rem;
+  }
+  .form {
+    gap: 2rem;
   }
 
   .form-main {
+    gap: 0;
     margin-inline: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    grid-row-gap: 1rem;
+    grid-column-gap: 2.5rem;
   }
 
   .form-header {
     background-color: #fff;
     padding: 0;
-    margin-bottom: 2rem;
   }
 }
 </style>

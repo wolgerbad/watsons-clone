@@ -9,110 +9,147 @@ function handleActiveTab(val) {
 </script>
 
 <template>
-  <section>
-    <header class="hamburger-header hamburger-top-item">
-      <img
-        src="/images/hamburger/close.svg"
-        alt="close icon"
-        @click="toggleOpen"
-      />
+  <div class="hamburger-wrapper">
+    <div class="backdrop" @click="toggleOpen"></div>
+    <section>
+      <header class="hamburger-header hamburger-top-item">
+        <img
+          src="/images/hamburger/close.svg"
+          alt="close icon"
+          @click="toggleOpen"
+        />
 
-      <h4>Menu</h4>
-    </header>
-    <div class="container" v-if="!activeTab">
-      <div
-        class="hamburger-item hamburger-top-item"
-        @click="handleActiveTab('Campaigns')"
-      >
-        <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
-        <p>Campaigns</p>
-      </div>
-      <div
-        class="hamburger-item hamburger-top-item"
-        @click="handleActiveTab('Personal Care')"
-      >
-        <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
-        <p>Personal Care</p>
-      </div>
-      <div
-        class="hamburger-item hamburger-top-item"
-        @click="handleActiveTab('Skin Care')"
-      >
-        <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
-        <p>Skin Care</p>
-      </div>
-      <div
-        class="hamburger-item hamburger-top-item"
-        @click="handleActiveTab('Make - up')"
-      >
-        <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
-
-        <p>Make - up</p>
-      </div>
-      <div
-        class="hamburger-item hamburger-top-item"
-        @click="handleActiveTab('Mother & Baby')"
-      >
-        <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
-        <p>Mother & Baby</p>
-      </div>
-      <div
-        class="hamburger-item hamburger-top-item"
-        @click="handleActiveTab('Healthy Life')"
-      >
-        <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
-        <p>Healthy Life</p>
-      </div>
-      <div
-        class="hamburger-item hamburger-top-item last"
-        @click="handleActiveTab('Brands')"
-      >
-        <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
-        <p>Brands</p>
-      </div>
-
-      <div class="hamburger-bot">
-        <div class="hamburger-item hamburger-bot-item">
-          <p>My profile</p>
-
-          <img src="/images/hamburger/user.svg" alt="user icon" />
+        <h4>Menu</h4>
+      </header>
+      <div class="container" v-if="!activeTab">
+        <div
+          class="hamburger-item hamburger-top-item"
+          @click="handleActiveTab('Campaigns')"
+        >
+          <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
+          <p>Campaigns</p>
         </div>
-        <div class="hamburger-item hamburger-bot-item">
-          <p>Order history</p>
-
-          <img src="/images/hamburger/history.svg" alt="user icon" />
+        <div
+          class="hamburger-item hamburger-top-item"
+          @click="handleActiveTab('Personal Care')"
+        >
+          <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
+          <p>Personal Care</p>
         </div>
-        <div class="hamburger-item hamburger-bot-item">
-          <p>Help center</p>
-
-          <img src="/images/hamburger/help.svg" alt="user icon" />
+        <div
+          class="hamburger-item hamburger-top-item"
+          @click="handleActiveTab('Skin Care')"
+        >
+          <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
+          <p>Skin Care</p>
         </div>
-        <div class="hamburger-item hamburger-bot-item">
-          <p>Log out</p>
-          <img src="/images/hamburger/logout.svg" alt="user icon" />
+        <div
+          class="hamburger-item hamburger-top-item"
+          @click="handleActiveTab('Make - up')"
+        >
+          <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
+
+          <p>Make - up</p>
+        </div>
+        <div
+          class="hamburger-item hamburger-top-item"
+          @click="handleActiveTab('Mother & Baby')"
+        >
+          <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
+          <p>Mother & Baby</p>
+        </div>
+        <div
+          class="hamburger-item hamburger-top-item"
+          @click="handleActiveTab('Healthy Life')"
+        >
+          <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
+          <p>Healthy Life</p>
+        </div>
+        <div
+          class="hamburger-item hamburger-top-item last"
+          @click="handleActiveTab('Brands')"
+        >
+          <img src="/images/hamburger/left-arrow.svg" alt="arrow icon" />
+          <p>Brands</p>
+        </div>
+
+        <div class="hamburger-bot">
+          <div class="hamburger-item hamburger-bot-item">
+            <p>My profile</p>
+
+            <img src="/images/hamburger/user.svg" alt="user icon" />
+          </div>
+          <div class="hamburger-item hamburger-bot-item">
+            <p>Order history</p>
+
+            <img src="/images/hamburger/history.svg" alt="user icon" />
+          </div>
+          <div class="hamburger-item hamburger-bot-item">
+            <p>Help center</p>
+
+            <img src="/images/hamburger/help.svg" alt="user icon" />
+          </div>
+          <div class="hamburger-item hamburger-bot-item">
+            <p>Log out</p>
+            <img src="/images/hamburger/logout.svg" alt="user icon" />
+          </div>
         </div>
       </div>
-    </div>
-    <div v-else class="active-tab">
-      <div class="active-header" @click="handleActiveTab(null)">
-        <p>{{ activeTab }}</p>
-        <img src="/images/hamburger/right-arrow.svg" alt="right arrow icon" />
+      <div v-else class="active-tab">
+        <div class="active-header" @click="handleActiveTab(null)">
+          <p>{{ activeTab }}</p>
+          <img src="/images/hamburger/right-arrow.svg" alt="right arrow icon" />
+        </div>
+        <ul>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum Dolor</li>
+          <li>Lorem Ipsum Dolor Sit</li>
+        </ul>
       </div>
-      <ul>
-        <li>Lorem Ipsum</li>
-        <li>Lorem Ipsum Dolor</li>
-        <li>Lorem Ipsum Dolor Sit</li>
-      </ul>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <style scoped>
+.hamburger-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+section {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  max-width: 80vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 2;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding-block: 1rem;
+  flex: 1;
 }
 
 .hamburger-item {

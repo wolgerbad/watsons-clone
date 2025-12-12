@@ -44,11 +44,13 @@ section {
 .categories {
   display: grid;
   grid-template-columns: 1;
+  gap: 1rem;
 }
 
 @media (min-width: 1024px) {
   section {
-    padding-inline: 21rem;
+    padding-inline: 340px;
+    padding-block: 2.5rem;
   }
   .categories {
     grid-template-columns: repeat(2, 1fr);

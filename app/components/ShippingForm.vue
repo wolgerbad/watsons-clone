@@ -35,22 +35,17 @@
           placeholder="Please select"
         >
           <option value="Please select">Please select</option>
-          <option value="Paris">Paris</option>
-          <option value="London">London</option>
         </select>
       </div>
-      <div class="form-main-area">
+      <div class="form-main-area disabled">
         <label for="district" class="form-label">District *</label>
         <select
-          disabled
           name="district"
           id="district"
           defaultValue="Please select"
           placeholder="Please select"
         >
           <option value="Please select">Please select</option>
-          <option value="Paris">Paris</option>
-          <option value="London">London</option>
         </select>
       </div>
       <div class="form-main-area address">
@@ -66,10 +61,6 @@
 </template>
 
 <style scoped>
-.shipping-form {
-  margin-bottom: 1rem;
-}
-
 textarea {
   height: 123px;
 }
@@ -88,9 +79,20 @@ textarea {
   outline: none;
 }
 
+.shipping-form {
+  margin-bottom: 1rem;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
 @media (min-width: 1024px) {
   .address {
     grid-column: 1 / -1;
+  }
+  .shipping-form {
+    margin-bottom: 0;
   }
 }
 </style>

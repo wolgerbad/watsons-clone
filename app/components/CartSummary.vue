@@ -1,11 +1,10 @@
 <script setup>
 const { cart, addToCart, removeCart } = useCart();
 
-const subTotal = cart?.value
-  .reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
-  .toFixed(2);
+const subTotal = computed(() =>
+  cart?.value.reduce((acc, cur) => acc + cur.price * cur.quantity, 0).toFixed(2)
+);
 const shipping = (10.5).toFixed(2);
-
 function handleAdd(product) {
   addToCart(product);
 }
@@ -17,7 +16,7 @@ function handleRemove(id) {
 
 <template>
   <div class="cart-summary">
-    <h4>Shopping cart summary</h4>
+    <h4 class="summary-title">Shopping cart summary</h4>
     <div v-if="cart.length">
       <div class="cart-container">
         <div v-for="product in cart" :key="product.id" class="cart-item">
@@ -52,26 +51,23 @@ function handleRemove(id) {
         </div>
         <div class="total">
           <div class="total-item">
-            <span>Subtotal</span>
-            <span class="price">{{ subTotal.replaceAll('.', ',') }} TL</span>
+            <h5 class="total-item-first">Subtotal</h5>
+            <h5 class="price">{{ subTotal.replaceAll('.', ',') }} TL</h5>
           </div>
           <div class="total-item item-shipping">
-            <span>Shipping</span>
-            <span class="price">{{ shipping.replaceAll('.', ',') }} TL</span>
+            <h5 class="total-item-first">Shipping</h5>
+            <h5 class="price">{{ shipping.replaceAll('.', ',') }} TL</h5>
           </div>
           <div class="total-item item-bottom">
-            <span>Total</span>
-            <span
-              >{{
-                (+subTotal + +shipping).toFixed(2).replaceAll('.', ',')
-              }}
-              TL</span
-            >
+            <h4 class="total-subtitle">Total</h4>
+            <h4 class="total-price">
+              {{ (+subTotal + +shipping).toFixed(2).replaceAll('.', ',') }} TL
+            </h4>
           </div>
         </div>
       </div>
     </div>
-    <div v-else>
+    <div v-else class="not-found">
       <span> There are no item found in the cart. </span>
       <NuxtLink to="/"> Go checkout our products </NuxtLink>
     </div>
@@ -80,8 +76,8 @@ function handleRemove(id) {
 
 <style scoped>
 .cart-summary {
-  padding-block: 1rem;
   margin-inline: 1rem;
+  padding-block: 1rem;
 }
 
 .cart-container {
@@ -90,10 +86,11 @@ function handleRemove(id) {
   gap: 1rem;
 }
 
-.cart-summary h4 {
+.summary-title {
   color: #2a2a48;
   font-size: var(--text-xl);
   padding-block: 4px;
+  margin-bottom: 1rem;
 }
 .cart-item {
   display: flex;
@@ -143,7 +140,9 @@ function handleRemove(id) {
   align-items: center;
 }
 .thumbnail {
-  width: 84px;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 }
 
 .total {
@@ -157,16 +156,31 @@ function handleRemove(id) {
   border-bottom: 1px solid #ececec;
 }
 
-.item-bottom {
+.item-bottom h4 {
+  flex: 1;
   color: #2a2a48 !important;
   font-size: var(--text-xl);
   font-weight: 700;
 }
 
+.total-price {
+  display: flex;
+  justify-content: end;
+}
+
 .total-item {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   color: #485363;
+}
+.total-item-first {
+  font-weight: 400;
+}
+
+.total-item h5 {
+  flex: 1;
+  font-size: var(--text-md);
+  line-height: 1rem;
 }
 
 .product-image-container {
@@ -197,6 +211,12 @@ input {
 
 .price {
   font-weight: 500;
+  display: flex;
+  justify-content: end;
+}
+
+.not-found {
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 1024px) {
@@ -210,10 +230,7 @@ input {
     box-shadow: 0px 4px 16px 0px rgba(42, 42, 72, 0.039);
     border: 1px solid rgb(var(--smoke));
     border-radius: 6px;
-  }
-
-  .cart-summary h4 {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 }
 </style>

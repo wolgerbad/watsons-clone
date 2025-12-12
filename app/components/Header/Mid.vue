@@ -5,7 +5,7 @@ const { cartLength } = useCart();
 
 <template>
   <nav>
-    <NuxtLink to="/">
+    <NuxtLink to="/" class="app-link">
       <img src="/images/topbar/logo.svg" alt="Application logo" />
     </NuxtLink>
     <div class="right">
@@ -29,10 +29,16 @@ const { cartLength } = useCart();
       <span class="search-icon">
         <img src="/images/topbar/mobile-search.svg" alt="Search icon" />
       </span>
+
+      <span class="divider-icon">
+        <img src="/images/topbar/divider.svg" alt="divider icon" />
+      </span>
+
       <NuxtLink to="/cart/checkout" class="basket-link">
         <img src="/images/topbar/basket.svg" class="basket" alt="Basket icon" />
         <span v-if="cartLength" class="basket-count">{{ cartLength }}</span>
       </NuxtLink>
+
       <span class="hamburger" @click="toggleOpen">
         <img src="/images/topbar/hamburger.svg" alt="Hamburger menu icon" />
       </span>
@@ -89,8 +95,13 @@ nav {
   object-fit: cover;
 }
 
+.app-link {
+  line-height: 0;
+}
+
 .basket-link {
   position: relative;
+  line-height: 1rem;
 }
 
 .basket-count {
@@ -107,14 +118,27 @@ nav {
   border: 2px solid white;
 }
 
+.divider-icon {
+  display: none;
+}
+
 @media (min-width: 1200px) {
   nav {
     height: 72px;
     padding: 0 140px;
   }
+  .right {
+    gap: 1.5rem;
+  }
+
+  .divider-icon {
+    display: inline-block;
+  }
+
   .search-icon {
     display: none;
   }
+
   .hamburger {
     display: none;
   }

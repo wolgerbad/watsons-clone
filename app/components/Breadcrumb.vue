@@ -33,10 +33,11 @@
   padding-block: 1rem;
 }
 
-.breadcrumb h2 {
+.checkout-header h2 {
   color: #2a2a48;
   font-size: 1.5rem;
   letter-spacing: -0.2px;
+  line-height: 2rem;
 }
 
 .top-header {
@@ -76,6 +77,7 @@
   .checkout-header h2 {
     font-size: 34px;
     letter-spacing: 0;
+    line-height: 3rem;
   }
 
   .breadcrumb span {

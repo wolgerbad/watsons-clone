@@ -53,10 +53,11 @@ img {
 }
 
 .wrapper {
-  padding: 4rem;
+  padding: 2.5rem;
 }
 
 .body {
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 1rem;
   display: flex;
@@ -67,12 +68,14 @@ img {
   transition: all 100ms ease-in-out;
 }
 h4 {
+  width: 100%;
   color: #2a2a48;
   font-size: var(--text-xl);
   font-weight: 700;
 }
 
 p {
+  width: 100%;
   font-size: var(--text-sm);
   font-weight: 400;
   color: #485363;
@@ -95,5 +98,11 @@ button {
 
 button:hover {
   background-color: #138a96;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 4rem;
+  }
 }
 </style>

@@ -26,7 +26,7 @@ function handleAdd(product) {
           <span class="hover-icon">
             <img src="/images/featured/view.svg" alt="view icon" />
           </span>
-          <span class="hover-text">Quick view</span>
+          <p class="hover-text">Quick view</p>
         </button>
 
         <img src="/images/featured/divider.svg" alt="divider icon" />
@@ -38,7 +38,7 @@ function handleAdd(product) {
           <span class="hover-icon">
             <img src="/images/featured/basket.svg" alt="basket icon" />
           </span>
-          <span class="hover-text"> Add </span>
+          <p class="hover-text">Add</p>
         </button>
       </span>
     </div>
@@ -117,6 +117,7 @@ function handleAdd(product) {
 
 .product-title {
   color: #485363;
+  line-height: 1.5rem;
 }
 
 .hover-text {
@@ -128,7 +129,7 @@ function handleAdd(product) {
 }
 
 .product-hover {
-  opacity: 0;
+  display: none;
 }
 
 @media (min-width: 1024px) {
@@ -141,6 +142,7 @@ function handleAdd(product) {
   }
 
   .product-hover {
+    opacity: 0;
     display: flex;
     transition: all 60ms ease-in-out;
     position: absolute;

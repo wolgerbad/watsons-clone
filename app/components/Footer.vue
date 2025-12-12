@@ -3,7 +3,7 @@
     <div class="footer-top">
       <div class="footer-item">
         <div class="item-header">
-          <span>CORPORATE</span>
+          <span class="item-title">CORPORATE</span>
           <span class="icon">
             <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
           </span>
@@ -17,7 +17,7 @@
       </div>
       <div class="footer-item">
         <div class="item-header">
-          <span>SHOPPING</span>
+          <span class="item-title">SHOPPING</span>
           <span class="icon">
             <img src="/images/footer/top-arrow.svg" alt="arrow bottom" />
           </span>
@@ -31,7 +31,7 @@
       </div>
       <div class="footer-item">
         <div class="item-header">
-          <span>LEGAL</span>
+          <span class="item-title">LEGAL</span>
           <span class="icon">
             <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
           </span>
@@ -45,7 +45,7 @@
       </div>
       <div class="footer-item">
         <div class="item-header">
-          <span>HELP CENTER</span>
+          <span class="item-title">HELP CENTER</span>
           <span class="icon">
             <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
           </span>
@@ -57,7 +57,7 @@
       </div>
       <div class="footer-item info">
         <div class="item-header">
-          <span>CONTACT US</span>
+          <span class="item-title">CONTACT US</span>
           <span class="icon">
             <img src="/images/footer/bottom-arrow.svg" alt="arrow bottom" />
           </span>
@@ -113,10 +113,6 @@ footer {
   padding: 1rem;
 }
 
-span {
-  line-height: 0;
-}
-
 .footer-top {
   display: flex;
   gap: 1rem;
@@ -127,8 +123,7 @@ span {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 1rem;
-  padding-bottom: 0.5rem;
+  gap: 0.5rem;
   border-bottom: 1px solid rgb(var(--smoke));
 }
 .item-content div {
@@ -147,6 +142,7 @@ span {
   font-size: var(--text-xs);
   font-weight: 500;
   justify-content: space-between;
+  padding-block: 0.5rem;
 }
 .item-content {
   display: none;
@@ -156,6 +152,11 @@ span {
   gap: 1rem;
   color: #485363;
   padding-bottom: 0.5rem;
+}
+
+.item-title {
+  padding-block: 4px;
+  line-height: 1rem;
 }
 
 .footer-bottom {
@@ -189,9 +190,10 @@ span {
 
 .show {
   display: flex;
+  padding-bottom: 1rem;
 }
 
-.icon {
+.footer-bottom li {
   line-height: 0;
 }
 
@@ -202,7 +204,7 @@ span {
   .footer-top {
     flex-direction: row;
     gap: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
   .footer-bottom {
     flex-direction: row;
@@ -229,6 +231,10 @@ span {
     gap: 2rem;
   }
 
+  .item-title {
+    padding-block: 0;
+  }
+
   .item-content {
     display: flex;
   }
@@ -237,6 +243,9 @@ span {
   }
   .footer-item {
     border: none;
+  }
+  .item-header {
+    padding-block: 0;
   }
 }
 </style>
